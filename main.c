@@ -76,13 +76,15 @@ u8 debounce(void)
 {
 	u8 i;
 	u8 count = 0;
-	for (i = 0; i < 255; ++i)
+	u8 buttons;
+	for (i = 0; i < 40; ++i)
 	{
-		if (P1IN & (FREQ_SEL_BUTTON | WAVE_SEL_BUTTON | DUTY_SEL_BUTTON)) ++count;
-		delay_us(10);
-		if (count == 255) return 1;
+		buttons = P1IN & (FREQ_SEL_BUTTON | WAVE_SEL_BUTTON | DUTY_SEL_BUTTON);
+
+		if (buttons < (FREQ_SEL_BUTTON | WAVE_SEL_BUTTON | DUTY_SEL_BUTTON)) ++count;
+		delay_ms(10);
 	}
-	if (count > 200) return 1;
+	if (count > 30) return 1;
 	return 0;
 }
 

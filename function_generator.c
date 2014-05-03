@@ -195,7 +195,7 @@ void fg_change(unsigned int wf, unsigned int freq, unsigned int dty)
 		}
 
 
-		unsigned int square_count = 0;
+		unsigned int square_count = 128;
 
 		if(freq == 1)
 		{
