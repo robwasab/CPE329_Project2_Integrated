@@ -1,0 +1,1 @@
+"./print.obj" "./main.obj" "./lcd.obj" "./function_generator.obj" "./delay.obj" "../lnk_msp430g2553.cmd" -l"libc.a" 
